@@ -11,6 +11,21 @@
 NSString *const kExecuting		                = @"isExecuting";
 NSString *const kFinished		                = @"isFinished";
 
+/*
+ 
+ dispatch_async(dispatch_get_main_queue(), ^{
+ self.connection = [[NSURLConnection alloc] initWithRequest:self.request
+ delegate:self
+ startImmediately:NO];
+ 
+ [self.connection scheduleInRunLoop:[NSRunLoop currentRunLoop]
+ forMode:NSRunLoopCommonModes];
+ 
+ [self.connection start];
+ });
+ 
+ */
+
 @implementation NetworkOperation
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString*)key
